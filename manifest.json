@@ -1,17 +1,23 @@
 {
   "manifest_version": 2,
-  "name": "PROJECT NAME",
-  "description": "PROJECT DESCRIPTION",
+  "name": "Dead Namerator",
+  "description": "Replaces dead name & pronouns",
   "version": "0.1",
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
-        "*://*/*"
+        "*://*/*",
+        "file://*"
       ],
       "js": [
-        "content.js"
+        "main-content.js"
       ],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
-  ]
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "128": "images/heart.png"
+  }
 }
